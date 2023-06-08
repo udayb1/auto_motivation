@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Motivational msg</title>
+
+<style>
+*{font-size:50px;}
+
+body{background-color:yellow;}
+</style>
+
+</head>
+<body><center>
+
+<h1>Motivational meaasge</h1>
+
+<script>
+function gm()
+{
+
+let msg=document.getElementById("msg");
+let urladd="https://api.quotable.io/random";
+fetch(urladd)
+.then(res=>res.json())
+.then(data=>msg.innerHTML=data.author+"==>"+data.content)
+.catch(err=>msg.innerHTML=err);
+
+}
+
+
+
+
+gm();
+setInterval(gm,2000);
+</script>
+
+<h1 id="msg"></h1>
+</center>
+</body>
+</html>
